@@ -1,0 +1,126 @@
+.board {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  border: 4px solid rgb(0, 0, 0);
+  margin: 2px;
+  display: flex;
+  /* deixe circular */
+  border-radius: 42%;
+  /* espaço entre as peças de 5px */
+  margin: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell1 {
+  width: 80px;
+  height: 80px;
+  border: 4px solid rgba(255, 255, 255, 0);
+  margin: 2px;
+  display: flex;
+  /* deixe circular */
+  border-radius: 42%;
+  /* espaço entre as peças de 5px */
+  margin: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+.piece-dog {
+  background-image: url('./assets/yoshi.gif');
+  background-size: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.piece-jaguar {
+  background-image: url('./assets/mario_running.gif');
+  background-size: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.piece:hover {
+  opacity: 0.8;
+}
+
+.highlight {
+  background-color: rgb(94, 245, 114);
+}
+
+.blue-piece {
+  background-color: blue;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+body {
+  background-image: url("./assets/mario_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  zoom: 1.15;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#gif-container {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+.occupied {
+  background-color: #fc5462;
+}
+
+#loading-screen img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#loading-screen img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#main-content {
+  display: none;
+}
