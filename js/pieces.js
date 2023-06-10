@@ -170,7 +170,7 @@ function jaguarEat(jaguarPiece,cellAtual) {
             cellPosEliminationAfter = getCell(pieceX - 1, pieceY - 1);
             if (
                 cellPosEliminationAfter &&
-                !cellPosEliminationAfter.classList.contains("piece-dog")
+                !cellPosEliminationAfter.classList.contains("piece-dog") && cellPosEliminationAfter === cellAtual
             ) {
                 piece.classList.remove("piece-dog");
                 movePiece(cellPosEliminationAfter);
@@ -198,7 +198,7 @@ function jaguarEat(jaguarPiece,cellAtual) {
             cellPosEliminationAfter = getCell(pieceX - 1, pieceY + 1);
             if (
                 cellPosEliminationAfter &&
-                !cellPosEliminationAfter.classList.contains("piece-dog")
+                !cellPosEliminationAfter.classList.contains("piece-dog") && cellPosEliminationAfter === cellAtual
             ) {
                 piece.classList.remove("piece-dog");
                 movePiece(cellPosEliminationAfter);
