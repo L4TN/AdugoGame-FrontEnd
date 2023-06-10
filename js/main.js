@@ -152,4 +152,4 @@ function checkForNewMove() {
   }
     
 // Chamar a função checkForNewMove a cada 1 segundo
-setInterval(checkForNewMove, 50); // 1 segundo
+setInterval(checkForNewMove, 1000); // 1 segundo
