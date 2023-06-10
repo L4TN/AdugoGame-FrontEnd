@@ -107,24 +107,29 @@ document.querySelectorAll(".piece-jaguar").forEach((element) => {
 
 // Função para verificar novo movimento
 function checkForNewMove() {
-    fetch('https://adugo-game-backend-01.onrender.com/api/check')
-      .then(response => response.json())
-      .then(data => {
+    fetch('https://adugo-game-backend-01.onrender.com/api/check', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Allow-Control-Allow-Origin': '*',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
         if (data.status === 'move available') {
-          console.log('Novo movimento disponível:', data.move);
-          // Atualizar o tabuleiro aqui com o novo movimento recebido
-          updateBoard(data.move);
+            console.log('Novo movimento disponível:', data.move);
+            // Atualizar o tabuleiro aqui com o novo movimento recebido
+            updateBoard(data.move);
         } else {
-          console.log('Nenhum novo movimento disponível');
-                  //print o status do erro
+            console.log('Nenhum novo movimento disponível');
+            //print o status do erro
             
         }
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.error('Ocorreu um erro ao verificar o novo movimento:', error);
-                //print o status do erro
-      });
-  }
+        //print o status do erro
+    });
+}
 
   function updateBoard(newMove) {
     Array.from(cells).forEach((cell) => {
